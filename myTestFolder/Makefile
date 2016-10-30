@@ -7,5 +7,5 @@ LDFLAGS	= -L/usr/local/lib
 LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm
 
 prog: test.c 
-	$(CC) -c $(CFLAGS) -o test test.c $(LDFLAGS) $(LDLIBS)
+	$(CC) $(CFLAGS) -o test test.c $(LDFLAGS) $(LDLIBS)
 
