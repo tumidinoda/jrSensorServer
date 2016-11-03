@@ -6,6 +6,7 @@ CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
 LDFLAGS	= -L/usr/local/lib
 LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm
 
-prog: test.cpp 
-	$(CC) $(CFLAGS) -o test test.cpp $(LDFLAGS) $(LDLIBS)
-
+testLEDblink: testLEDblink.cpp 
+	$(CC) $(CFLAGS) -o testLEDblink testLEDblink.cpp $(LDFLAGS) $(LDLIBS)
+testMotor: testMotor.cpp
+	$(CC) $(CFLAGS) -o testMotor testMotor.cpp $(LDFLAGS) $(LDLIBS)
