@@ -1,11 +1,11 @@
 DEBUG	= -O3
-CC	= gcc
+CC	= g++
 INCLUDE	= -I/usr/local/include
 CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
 
 LDFLAGS	= -L/usr/local/lib
 LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm
 
-prog: test.c 
-	$(CC) $(CFLAGS) -o test test.c $(LDFLAGS) $(LDLIBS)
+prog: test.cpp 
+	$(CC) $(CFLAGS) -o test test.cpp $(LDFLAGS) $(LDLIBS)
 
