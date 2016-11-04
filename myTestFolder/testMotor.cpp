@@ -22,14 +22,18 @@ int main (void)
   }
   
   // Zu Testzwecken eine ganze Umdrehung (single step Sequenz)
-  for (int i=0;i<3000;++i)
+  for (int i=0;i<2038/4;++i)
   {
 	  // Single Step Sequenz: Pin0->Pin1->Pin2->Pin3
-	  for (j=0;i<4;++j) {
+	  for (int j=0;j<4;++j) {
 		  int pin=j;
-		  digitalWrite (pin, HIGH) ; delay (100);
-		  digitalWrite (pin,  LOW) ; delay (100);
+                  //cout << "Schleife: " << i << " Pin: " << j << endl;
+		  digitalWrite(pin,HIGH);
+		  digitalWrite(pin+4,HIGH); delay (15);
+		  digitalWrite(pin,LOW);
+		  digitalWrite(pin+4,LOW); delay(15);
 	  }
   }
+  cout << "Testende" << endl;
   return 0 ;
 }
