@@ -11,5 +11,5 @@ testLEDblink: testLEDblink.cpp
 testMotor: testMotor.cpp
 	$(CC) $(CFLAGS) -o testMotor testMotor.cpp $(LDFLAGS) $(LDLIBS)
 testStepMotor: testStepMotor.cpp ../stepMotor/stepMotor.h ../stepMotor/stepMotor.cpp
-	$(CC) $(CFLAGS) -o testMotor testMotor.cpp ../stepMotor/stepMotor.cpp $(LDFLAGS) $(LDLIBS)	
+	$(CC) $(CFLAGS) -o testStepMotor  ../stepMotor/stepMotor.cpp testStepMotor.cpp $(LDFLAGS) $(LDLIBS)	
 

@@ -10,8 +10,8 @@ using namespace std;
 class stepMotor {
 public:
 	stepMotor(int pinA=0,int pinB=1,int pinC=2,int pinD=3,int stepDelay=20);
-	void stepForward(int steps);
-	void stepBackward(int steps);
+	void stepForward(int steps=1);
+	void stepBackward(int steps=1);
 	void rotate(int rounds=1);
 private:
 	int pinA,pinB,pinC,pinD;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <wiringPi.h>
 #include "stepMotor.h"
 using namespace std;
 
@@ -11,14 +12,30 @@ stepMotor::stepMotor(int pinA,int pinB,int pinC,int pinD,int stepDelay)
 	this->pinD=pinD;
 	this->stepDelay=stepDelay;
 	
-	
-	
+	// Initialze wiringPi, setting pinA to pinD to output mode
+	wiringPiSetup () ;
+	pinMode(pinA, OUTPUT);
+	pinMode(pinB, OUTPUT);	
+	pinMode(pinC, OUTPUT);	
+	pinMode(pinD, OUTPUT);	
 }
 //================================================================================================================================================
 void stepMotor::stepForward(int steps)
 {
-	
-	
+	for (int i=0;i<steps;++i) {
+		// impulse on pinA
+		digitalWrite(pinA,HIGH); delay(stepDelay);
+		digitalWrite(pinA,LOW); delay(stepDelay);
+		// impulse on pinB
+		digitalWrite(pinB,HIGH); delay(stepDelay);
+		digitalWrite(pinB,LOW); delay(stepDelay);
+		// impulse on pinC
+		digitalWrite(pinC,HIGH); delay(stepDelay);
+		digitalWrite(pinC,LOW); delay(stepDelay);
+		// impulse on pinC
+		digitalWrite(pinA,HIGH); delay(stepDelay);
+		digitalWrite(pinA,LOW); delay(stepDelay);
+	}	
 }
 //================================================================================================================================================
 void stepMotor::stepBackward(int steps)
