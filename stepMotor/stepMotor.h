@@ -16,5 +16,6 @@ public:
 private:
 	int pinA,pinB,pinC,pinD;
 	int stepDelay;
+	static bool ifGPIOinit=false;
 
 };

@@ -13,7 +13,10 @@ stepMotor::stepMotor(int pinA,int pinB,int pinC,int pinD,int stepDelay)
 	this->stepDelay=stepDelay;
 	
 	// Initialze wiringPi, setting pinA to pinD to output mode
-	wiringPiSetup () ;
+	if (!ifGPIOinit) {
+		wiringPiSetup ();
+		ifGPIOinit=true;
+	}
 	pinMode(pinA, OUTPUT);
 	pinMode(pinB, OUTPUT);	
 	pinMode(pinC, OUTPUT);	
