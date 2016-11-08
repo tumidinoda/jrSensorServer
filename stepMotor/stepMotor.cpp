@@ -23,6 +23,8 @@ stepMotor::stepMotor(int pinA,int pinB,int pinC,int pinD,int stepDelay)
 	pinMode(pinD, OUTPUT);	
 }
 //================================================================================================================================================
+bool stepMotor::ifGPIOinit=false;
+//================================================================================================================================================
 void stepMotor::stepForward(int steps)
 {
 	for (int i=0;i<steps;++i) {
