@@ -4,3 +4,9 @@
 [submodule "oscilloscope/pyvisa-py"]
 	path = oscilloscope/pyvisa-py
 	url = https://github.com/hgrecco/pyvisa-py.git
+[submodule "pyvisa-py"]
+	path = pyvisa-py
+	url = https://github.com/hgrecco/pyvisa-py.git
+[submodule "pyusb"]
+	path = pyusb
+	url = https://github.com/walac/pyusb.git
