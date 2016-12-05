@@ -1,3 +1,6 @@
 [submodule "wiringPi"]
 	path = wiringPi
 	url = git://git.drogon.net/wiringPi
+[submodule "oscilloscope/pyvisa-py"]
+	path = oscilloscope/pyvisa-py
+	url = https://github.com/hgrecco/pyvisa-py.git
